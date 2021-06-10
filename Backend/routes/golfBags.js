@@ -35,9 +35,9 @@ router.get(`/getGolfbags`, async (req,res)=>{
 router.get(`/getOneBag/:id`, async (req,res)=>{
     try{
         const golfbag = await GolfBag.findById(req.params.id);
-        // if(!golfbag){
-        //     return res.status(400).send(`The golfbag with the id "${req.params.id}" does not exist.`);
-        // };
+        if(!golfbag){
+            return res.status(400).send(`The golfbag with the id "${req.params.id}" does not exist.`);
+        };
         return res.send(golfbag);
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`)

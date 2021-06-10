@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose= require('mongoose');
 const {golfBagSchema} = require('./golfbag');
 const {roundSchema} = require('./round');
 
@@ -10,7 +10,6 @@ const golferSchema = new mongoose.Schema({
     handicap: {type: Number, required: true},
     rounds: {type:[roundSchema], default: []}
 });
-
 
 const Golfer = mongoose.model('Golfer', golferSchema);
 

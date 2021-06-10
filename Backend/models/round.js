@@ -27,6 +27,6 @@ const roundSchema = new mongoose.Schema({
     underPar:{type: Boolean, required: true}
 });
 
-const Round = mongoose.model('Round', roundSchema);
+const Round= mongoose.model('Round', roundSchema);
 
 module.exports = Round;
