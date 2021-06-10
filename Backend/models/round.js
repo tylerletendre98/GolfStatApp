@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const {golferSchema}= require('./golfer');
 
 const roundSchema = new mongoose.Schema({
-    golfer:{type: [golferSchema], required: true, defualt: []},
+    golfers:{type: [golferSchema], required: true, defualt: []},
     courseName: {type: String, required: true, minlength: 5, maxlength: 50},
     coursePar:{type: Number, required: true},
     holeOne: {type: Number, required: true},
