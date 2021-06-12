@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-const {golferSchema}= require('./golfer');
+// const {golferSchema}= require('./golfer');
 
 const roundSchema = new mongoose.Schema({
-    golfers:{type: [golferSchema], required: true, defualt: []},
     courseName: {type: String, required: true, minlength: 5, maxlength: 50},
     coursePar:{type: Number, required: true},
     holeOne: {type: Number, required: true},
@@ -24,7 +23,7 @@ const roundSchema = new mongoose.Schema({
     holeSeventeen: {type: Number, required: true},
     holeEighteen: {type: Number, required: true},
     roundTotal:{type: Number, required: true},
-    underPar:{type: Boolean, required: true}
+    underPar:{type: Boolean, required: true, default: false}
 });
 
 const Round= mongoose.model('Round', roundSchema);

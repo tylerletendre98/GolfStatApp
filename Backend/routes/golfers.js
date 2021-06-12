@@ -79,4 +79,44 @@ router.delete('/deleteGolfer/:id', async (req,res)=>{
     };
 });
 
+//add golfbag to golfer
+
+router.post('/:golferId/addGolfBag/:golfBagId', async (req,res)=>{
+    try{
+        const golfer = await Golfer.findById(req.params.golferId);
+        if(!golfer)
+            return res.status(400).send(`The goler with the Id "${req.params.golferId}" does not exist.`);
+        const golfBag = await GolfBag.findById(req.params.golfBagId);
+        if(!golfBag)
+            return res.status(400).send(`The golfbag with the Id "${req.params.golfBagId}" does not exist.`)
+        golfer.golfBag.push(golfBag)
+        
+        await golfer.save()
+        return res.send(golfer)
+    }catch(ex){
+        return res.status(500).send(`Internal server Error:${ex}.`)
+    }
+});
+
+//add round to golfer
+router.post('/:golferId/addRound/:roundId', async (req,res)=>{
+    try{
+        const golfer = await Golfer.findById(req.params.golferId);
+        if(!golfer)
+            return res.status(400).send(`The goler with the Id "${req.params.golferId}" does not exist.`);
+        const round = await Round.findById(req.params.roundId);
+        if(!round)
+            return res.status(400).send(`The round with the Id "${req.params.roundId}" does not exist.`)
+        golfer.rounds.push(round)
+        
+        await golfer.save()
+        return res.send(golfer)
+    }catch(ex){
+        return res.status(500).send(`Internal server Error:${ex}.`)
+    }
+});
+
+
+
+
 module.exports = router;
