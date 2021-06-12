@@ -3,6 +3,7 @@ const connectDB = require('./startup/db');
 const golfbag = require('./routes/golfBags');
 const golfer = require('./routes/golfers');
 const round = require('./routes/rounds');
+const auth = require('./routes/auth');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use('/api/golfBag', golfbag);
 app.use('/api/golfer', golfer);
 app.use('/api/round', round);
+app.use('/api/auth', auth);
 
 
 const port = process.env.PORT || 5000;

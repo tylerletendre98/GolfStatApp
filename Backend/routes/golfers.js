@@ -1,7 +1,9 @@
 const Golfer = require('../models/golfer');
 const GolfBag= require('../models/golfbag');
 const Round = require('../models/round');
+const auth = require('../middleware/auth');
 const express = require('express');
+const bcrypt = require('bcrypt');
 const router = express.Router();
 
 //add a new golfer
@@ -81,7 +83,7 @@ router.delete('/deleteGolfer/:id', async (req,res)=>{
 
 //add golfbag to golfer
 
-router.post('/:golferId/addGolfBag/:golfBagId', async (req,res)=>{
+router.post('/:golferId/addGolfBag/:golfBagId', auth, async (req,res)=>{
     try{
         const golfer = await Golfer.findById(req.params.golferId);
         if(!golfer)
@@ -99,7 +101,7 @@ router.post('/:golferId/addGolfBag/:golfBagId', async (req,res)=>{
 });
 
 //add round to golfer
-router.post('/:golferId/addRound/:roundId', async (req,res)=>{
+router.post('/:golferId/addRound/:roundId',  async (req,res)=>{
     try{
         const golfer = await Golfer.findById(req.params.golferId);
         if(!golfer)
@@ -113,6 +115,33 @@ router.post('/:golferId/addRound/:roundId', async (req,res)=>{
         return res.send(golfer)
     }catch(ex){
         return res.status(500).send(`Internal server Error:${ex}.`)
+    }
+});
+
+router.post('/', async (req,res)=>{
+    try{
+        let golfer = await Golfer.findOne({email: req.body.email});
+        if(golfer) return res.status(400).send('Golfer already registered');
+
+        const salt = await bcrypt.genSalt(10)
+        golfer = new Golfer({
+            name: req.body.name,
+            email: req.body.email,
+            dexterity: req.body.dexterity,
+            handicap: req.body.handicap,
+            password: await bcrypt.hash(req.body.password, salt)
+        });
+
+        await golfer.save();
+        
+        const token = golfer.generateAuthToken();
+
+        return res
+            .header('x-auth-token', token)
+            .header('access-control-expose-headers', 'x-auth-token')
+            .send({_id: golfer.id, name: golfer.name, email: golfer.email});
+    }catch(ex){
+        return res.status(500).send(`Internal Server Error: ${ex}`);
     }
 });
 
