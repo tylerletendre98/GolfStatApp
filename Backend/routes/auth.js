@@ -12,6 +12,7 @@ function validateLogin(req){
     return schema.validate(req);
 }
 
+//Login golfer
 router.post('/loginGolfer', async (req,res)=>{
     try{
         const {error} = validateLogin(req.body);

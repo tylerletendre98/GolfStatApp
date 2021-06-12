@@ -17,7 +17,16 @@ const golferSchema = new mongoose.Schema({
 });
 
 golferSchema.methods.generateAuthToken = function(){
-    return jwt.sign({_id: this._id, name: this.name}, config.get('jwtSecret'));
+    return jwt.sign({
+        _id: this._id,
+        name: this.name,
+        email: this.email, 
+        belongsToClub: this.belongsToClub, 
+        golfBag: this.golfBag, 
+        dexterity: this.dexterity,
+        handicap: this.handicap,
+        rounds: this.rounds}
+        , config.get('jwtSecret'));
 };
 
 const Golfer= mongoose.model('Golfer', golferSchema);

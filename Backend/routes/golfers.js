@@ -46,7 +46,7 @@ router.get('/golfer/:id', async (req,res)=>{
 })
 
 //update a golfer
-router.put('/updateGolfer/:id', async (req,res)=>{
+router.put('/updateGolfer/:id', auth,  async (req,res)=>{
     try{
         const golfer = await Golfer.findByIdAndUpdate(req.params.id,
             {
@@ -101,7 +101,7 @@ router.post('/:golferId/addGolfBag/:golfBagId', auth, async (req,res)=>{
 });
 
 //add round to golfer
-router.post('/:golferId/addRound/:roundId',  async (req,res)=>{
+router.post('/:golferId/addRound/:roundId', auth,  async (req,res)=>{
     try{
         const golfer = await Golfer.findById(req.params.golferId);
         if(!golfer)
