@@ -5,33 +5,24 @@ import Home from "./components/Pages/Home/Home";
 import PlayerPage from "./components/Pages/PlayerPage";
 import ScoreCard from "./components/Pages/ScoreCard";
 import Login from "./components/Pages/Login";
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-import jwt from "jwt-decode";
+import jwtDecode from "jwt-decode";
 
 function App() {
   const [player, setPlayer] = useState();
-  const playerId = "60c50f834259cc0555f7b7b9";
+  const [token, setToken] = useState("");
+  // const playerId = "60c50f834259cc0555f7b7b9";
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/golfer/golfer/${playerId}`)
-      .then((response) => {
-        setPlayer(response.data);
-      });
-    console.log(player);
+    const jwt = localStorage.getItem("token");
+    try {
+      const player = jwtDecode(jwt);
+      setPlayer(player);
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
 
-  // const loginUser = (email, password) => {
-  //   axios
-  //     .post(`http://localhost:5000/api/auth/loginGolfer`, {
-  //       email,
-  //       password,
-  //     })
-  //     .then((res) => {
-  //       localStorage.setItem("token", res.data.token);
-  //     });
-  // };
   return (
     <div className="App">
       <NavBar />
@@ -42,7 +33,10 @@ function App() {
           render={(props) => <PlayerPage {...props} player={player} />}
         />
         <Route path="/scorecard" component={ScoreCard} />
-        <Route path="/login" component={Login} />
+        <Route
+          path="/login"
+          render={(props) => <Login {...props} setToken={setToken} />}
+        />
       </Switch>
     </div>
   );

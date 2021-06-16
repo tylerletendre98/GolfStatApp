@@ -4,13 +4,16 @@ import GolfBag from "../golfbag/GolfBag";
 import "./playerPage.css";
 
 const PlayerPage = (props) => {
-  return (
-    <div className="container-player-info">
-      <PlayerInfo player={props.player} />
-      <RoundData player={props.player} />
-      <GolfBag player={props.player} />
-    </div>
-  );
+  if (!props.player) {
+    return <div>nothing loaded</div>;
+  } else
+    return (
+      <div className="container-player-info">
+        <PlayerInfo player={props.player} />
+        <RoundData player={props.player} />
+        <GolfBag player={props.player} />
+      </div>
+    );
 };
 
 export default PlayerPage;

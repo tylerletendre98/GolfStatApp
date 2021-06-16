@@ -15,8 +15,8 @@ function validateLogin(req){
 //Login golfer
 router.post('/loginGolfer', async (req,res)=>{
     try{
-        const {error} = validateLogin(req.body);
-        if (error) return res.status(400).send(error.details[0].message);
+        // const {error} = validateLogin(req.body);
+        // if (error) return res.status(400).send(error.details[0].message);
 
         let golfer = await Golfer.findOne({email: req.body.email});
         if(!golfer) return res.status(400).send(`Invalid email or password.`);
