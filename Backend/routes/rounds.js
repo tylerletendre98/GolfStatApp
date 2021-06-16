@@ -3,7 +3,7 @@ const Golfer = require('../models/golfer');
 const Round = require('../models/round');
 const router = express.Router();
 
-router.post('/newRound/:golferId', async (req,res)=>{
+router.post('/newRound', async (req,res)=>{
     try{
         const newRound = new Round({
             courseName: req.body.courseName,
@@ -30,9 +30,7 @@ router.post('/newRound/:golferId', async (req,res)=>{
             underPar: req.body.underPar
         });
         await newRound.save()
-        const golfer = await Golfer.findById(req.params.golferId);
-        golfer.rounds.push(newRound);
-        return res.send(golfer)
+        return res.send(newRound._id);
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`);
     }
