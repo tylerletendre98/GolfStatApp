@@ -139,7 +139,7 @@ router.post('/', async (req,res)=>{
         return res
             .header('x-auth-token', token)
             .header('access-control-expose-headers', 'x-auth-token')
-            .send({_id: golfer.id, name: golfer.name, email: golfer.email});
+            .send(token);
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`);
     }

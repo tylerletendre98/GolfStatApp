@@ -22,7 +22,6 @@ const Login = (props) => {
     axios
       .post(`http://localhost:5000/api/auth/loginGolfer`, data)
       .then((response) => {
-        console.log(response);
         localStorage.setItem("token", response.data);
         window.location = "/";
       });
