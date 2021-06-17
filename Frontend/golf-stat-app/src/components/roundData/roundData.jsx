@@ -1,8 +1,8 @@
 import "./roundData.css";
 
 const RoundData = (props) => {
-  if (props.player === null) {
-    return <div>Loading...</div>;
+  if (props.player.length === 0) {
+    return <div>This player hasnt entered any rounds</div>;
   } else {
     return (
       <div>

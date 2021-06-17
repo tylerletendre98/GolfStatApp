@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import "./navBar.css";
 
 const NavBar = () => {
+  const handleClick = () => {
+    localStorage.removeItem("token");
+    window.location = "/";
+  };
   return (
     <nav className="navbar">
       <ul>
@@ -16,6 +20,9 @@ const NavBar = () => {
         </Link>
         <Link to="/login">
           <button>Login</button>
+        </Link>
+        <Link to="/">
+          <button onClick={handleClick}>Logout</button>
         </Link>
       </ul>
     </nav>

@@ -10,8 +10,6 @@ import jwtDecode from "jwt-decode";
 
 function App() {
   const [player, setPlayer] = useState();
-  const [token, setToken] = useState("");
-  // const playerId = "60c50f834259cc0555f7b7b9";
 
   useEffect(() => {
     const jwt = localStorage.getItem("token");
@@ -33,10 +31,7 @@ function App() {
           render={(props) => <PlayerPage {...props} player={player} />}
         />
         <Route path="/scorecard" component={ScoreCard} />
-        <Route
-          path="/login"
-          render={(props) => <Login {...props} setToken={setToken} />}
-        />
+        <Route path="/login" render={(props) => <Login {...props} />} />
       </Switch>
     </div>
   );
