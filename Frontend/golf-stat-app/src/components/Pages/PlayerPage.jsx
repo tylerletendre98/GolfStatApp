@@ -10,7 +10,7 @@ const PlayerPage = (props) => {
     return (
       <div className="container-player-info">
         <PlayerInfo player={props.player} />
-        <RoundData player={props.player} />
+        <RoundData player={props.player} deleteRound={props.deleteRound} />
         <GolfBag player={props.player} />
       </div>
     );

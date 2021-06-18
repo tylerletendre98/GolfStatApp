@@ -1,6 +1,10 @@
 import "./roundData.css";
 
 const RoundData = (props) => {
+  const handleClick = (roundId) => {
+    props.deleteRound(roundId);
+  };
+
   if (props.player.length === 0) {
     return <div>This player hasnt entered any rounds</div>;
   } else {
@@ -23,6 +27,13 @@ const RoundData = (props) => {
                   <div>
                     <p>Round Score: {round.roundTotal}</p>
                   </div>
+                  <button
+                    onClick={() => {
+                      handleClick(round._id);
+                    }}
+                  >
+                    Delete Round
+                  </button>
                 </div>
               </div>
             );

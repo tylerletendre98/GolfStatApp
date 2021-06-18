@@ -6,12 +6,17 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //sets email variable
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
+
+  //sets password variable
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
+
+  //Logs the user in
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = {
@@ -23,6 +28,7 @@ const Login = (props) => {
       .post(`http://localhost:5000/api/auth/loginGolfer`, data)
       .then((response) => {
         localStorage.setItem("token", response.data);
+        alert("You have successfully logged in!");
         window.location = "/";
       });
   };

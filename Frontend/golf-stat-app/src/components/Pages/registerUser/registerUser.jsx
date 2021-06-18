@@ -8,18 +8,19 @@ const RegisterPage = (props) => {
   const [dexterity, setDexterity] = useState("");
   const [handicap, setHandicap] = useState("");
 
+  //sets name variable
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
-
+  //set email variable
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-
+  //sets password variable
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
+  //sets belongs to club variable
   const handleBelongsToClubChange = (e) => {
     if (belongsToClub === "yes") {
       setBelongsToClub(true);
@@ -27,16 +28,16 @@ const RegisterPage = (props) => {
       setBelongsToClub(false);
     }
   };
-
+  //sets dexerity variable
   const handleDexterityChange = (e) => {
     setDexterity(e.target.value);
   };
-
+  //sets handicap variable
   const handleHandicapChange = (e) => {
     setHandicap(e.target.value);
     parseFloat(handicap);
   };
-
+  //register the new golfer
   const handleSubmit = (event) => {
     event.preventDefault();
     const newGolfer = {
