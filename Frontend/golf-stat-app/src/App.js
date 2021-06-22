@@ -6,6 +6,7 @@ import PlayerPage from "./components/Pages/PlayerPage";
 import ScoreCard from "./components/Pages/Scorcard/ScoreCard";
 import Login from "./components/Pages/Login";
 import RegisterPage from "./components/Pages/registerUser/registerUser";
+import AddGolfBag from "./components/addGolfBag/addGolfBag";
 import React, { useState, useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
@@ -14,16 +15,35 @@ function App() {
   const [player, setPlayer] = useState();
   const [round, setRound] = useState();
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
+  const [newGolfBag, setNewGolfBag] = useState();
 
   useEffect(() => {
     const jwt = localStorage.getItem("token");
+    let playerId;
+    if (jwt) {
+      playerId = jwtDecode(jwt);
+    }
     try {
-      const player = jwtDecode(jwt);
-      setPlayer(player);
+      axios
+        .get(`http://localhost:5000/api/golfer/golfer/${playerId._id}`, {
+          headers: { Authorization: "Bearer " + jwt },
+        })
+        .then((res) => {
+          setPlayer(res.data);
+        });
     } catch (err) {
       console.log(err);
     }
-  }, [jwt]);
+  }, [player]);
+
+  const addNewGolfBag = (newGolfBag) => {
+    axios
+      .post(
+        `http://localhost:5000/api/golfBag/addGolfBag/${player._id}`,
+        newGolfBag
+      )
+      .then((res) => setPlayer(res.data));
+  };
 
   const addRoundToGolfer = (round) => {
     axios
@@ -76,6 +96,10 @@ function App() {
           render={(props) => (
             <RegisterPage {...props} registerNewGolfer={registerNewGofler} />
           )}
+        />
+        <Route
+          path="/addGolfBag"
+          render={(props) => <AddGolfBag addNewGolfBag={addNewGolfBag} />}
         />
       </Switch>
     </div>

@@ -86,6 +86,9 @@ router.put(`/updateGolfBag/:id`, async (req,res)=>{
 
 router.post('/addGolfBag/:golferId', async (req,res)=>{
     try{
+        const golfer = await Golfer.findById(req.params.golferId);
+        if(!golfer)
+        return res.status(400).send(`Golfer with the id "${req.params.golferId}" does not exist.`)
         const newGolfBag = new GolfBag({
             driver: req.body.driver,
             threeWood: req.body.threeWood,
@@ -95,10 +98,7 @@ router.post('/addGolfBag/:golferId', async (req,res)=>{
             wedges: req.body.wedges,
             putter: req.body.putter
         });
-       await newGolfBag.save()
-       const golfer = Golfer.findById(req.params.golferId);
-        if(!golfer)
-        return res.status(400).send(`Golfer with the id "${req.params.golferId}" does not exist.`)
+       newGolfBag.save()
         golfer.golfBag.push(newGolfBag)
         return res.send(golfer); 
     }catch(ex){
