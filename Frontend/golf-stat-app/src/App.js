@@ -34,7 +34,7 @@ function App() {
     } catch (err) {
       console.log(err);
     }
-  }, [player]);
+  }, [jwt]);
 
   const addNewGolfBag = (newGolfBag) => {
     axios
@@ -99,7 +99,9 @@ function App() {
         />
         <Route
           path="/addGolfBag"
-          render={(props) => <AddGolfBag addNewGolfBag={addNewGolfBag} />}
+          render={(props) => (
+            <AddGolfBag {...props} addNewGolfBag={addNewGolfBag} />
+          )}
         />
       </Switch>
     </div>

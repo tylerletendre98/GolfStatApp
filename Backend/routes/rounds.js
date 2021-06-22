@@ -82,10 +82,10 @@ router.get('/rounds', async (req,res)=>{
     }
 });
 
-router.delete('/deleteRound/:roundId', async (req,res)=>{
+router.delete('/deleteRound/:golferId/:roundId', async (req,res)=>{
     try{
-        const golfer = await Golfer.findById(req.params.golferId)
-        golfer.rounds.findByIdAndRem(req.params.roundId)
+        await Round.findByIdAndDelete(req.params.roundId)
+        golfer = await Golfer.findById(req.params.golferId)
         golfer.save()
         return res.send(golfer)
     }catch(ex){

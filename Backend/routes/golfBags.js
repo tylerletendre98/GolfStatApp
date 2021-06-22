@@ -100,6 +100,7 @@ router.post('/addGolfBag/:golferId', async (req,res)=>{
         });
        newGolfBag.save()
         golfer.golfBag.push(newGolfBag)
+        golfer.save()
         return res.send(golfer); 
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`)
