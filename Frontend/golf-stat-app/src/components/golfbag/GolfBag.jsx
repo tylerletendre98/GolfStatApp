@@ -2,36 +2,35 @@ import "./golfBag.css";
 import { Link } from "react-router-dom";
 
 const GolfBag = (props) => {
-  if (props.player.golfBag.length !== 0) {
+  if (props.player.golfBag !== undefined) {
     return (
       <div>
         <div>
           <h3>Golfbag:</h3>
         </div>
-        {props.player.golfBag.map((club) => {
-          return (
-            <div className="golfbag">
-              <div>
-                <p>Driver: {club.driver}</p>
-              </div>
-              <div>
-                <p>Three Wood: {club.threeWood}</p>
-              </div>
-              <div>
-                <p>Three Hybrid: {club.threeHybrid}</p>
-              </div>
-              <div>
-                <p>Iron Set:{club.ironSet}</p>
-              </div>
-              <div>
-                <p>Wedges:{club.wedges}</p>
-              </div>
-              <div>
-                <p>Putter: {club.putter}</p>
-              </div>
-            </div>
-          );
-        })}
+        <div className="golfbag">
+          <div>
+            <p>Driver: {props.player.golfBag.driver}</p>
+          </div>
+          <div>
+            <p>Three Wood: {props.player.golfBag.threeWood}</p>
+          </div>
+          <div>
+            <p>Three Hybrid: {props.player.golfBag.threeHybrid}</p>
+          </div>
+          <div>
+            <p>Iron Set:{props.player.golfBag.ironSet}</p>
+          </div>
+          <div>
+            <p>Wedges:{props.player.golfBag.wedges}</p>
+          </div>
+          <div>
+            <p>Putter: {props.player.golfBag.putter}</p>
+          </div>
+        </div>
+        <div>
+          <button>Edit Golf Bag</button>
+        </div>
       </div>
     );
   } else {

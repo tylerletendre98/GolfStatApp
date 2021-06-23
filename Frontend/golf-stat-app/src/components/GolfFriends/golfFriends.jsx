@@ -1,37 +1,33 @@
 import "./golfFriend.css";
 
 const GolfFriends = (props) => {
-  return (
-    <div>
+  console.log(props.friends.length);
+  if (props.friends.length !== 0) {
+    return (
       <div>
-        {props.player.friends.map((friend) => {
+        {props.friends.map((friend) => {
           return (
-            <div className="container-friend">
+            <div>
               <div>
-                <h4>{friend.name}</h4>
-              </div>
-              <div>
-                <p>{friend.handicap}</p>
-              </div>
-              <div>
-                <h4>Rounds:</h4>
-                {friend.rounds.map((round) => {
-                  return (
-                    <div className="container-round">
-                      <div>
-                        <p>{round.courseName}</p>
-                        <p>{round.roundTotal}</p>
-                      </div>
-                    </div>
-                  );
-                })}
+                <p>{friend.name}</p>
               </div>
             </div>
           );
         })}
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div>
+        <div>
+          <p>this golfer has no friends</p>
+        </div>
+        <div>
+          <button>Find Friends</button>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default GolfFriends;

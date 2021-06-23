@@ -99,7 +99,7 @@ router.post('/addGolfBag/:golferId', async (req,res)=>{
             putter: req.body.putter
         });
        newGolfBag.save()
-        golfer.golfBag.push(newGolfBag)
+        golfer.golfBag = newGolfBag
         golfer.save()
         return res.send(golfer); 
     }catch(ex){

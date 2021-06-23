@@ -18,38 +18,39 @@ function App() {
   const [round, setRound] = useState();
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
   const [newGolfBag, setNewGolfBag] = useState();
-  const [pastRounds, setPastRounds] = useState([]);
+  const [pastRounds, setPastRounds] = useState();
 
-  useEffect(() => {
-    const jwt = localStorage.getItem("token");
-    let playerId;
-    if (jwt) {
-      playerId = jwtDecode(jwt);
-    }
-    try {
-      axios
-        .get(`http://localhost:5000/api/golfer/golfer/${playerId._id}`, {
-          headers: { Authorization: "Bearer " + jwt },
-        })
-        .then((res) => {
-          setPlayer(res.data);
-        });
-      getPastRounds(player);
-    } catch (err) {
-      console.log(err);
-    }
-  }, [jwt]);
+  useEffect(
+    () => {
+      const jwt = localStorage.getItem("token");
+      let playerId;
+      if (jwt) {
+        playerId = jwtDecode(jwt);
+        axios
+          .get(`http://localhost:5000/api/golfer/golfer/${playerId._id}`, {
+            headers: { Authorization: "Bearer " + jwt },
+          })
+          .then((res) => {
+            setPlayer(res.data);
+          });
+      }
+    },
+    [jwt],
+    [player]
+  );
 
-  const getPastRounds = (player) => {
+  // useEffect(() => {
+  //   getPastRounds();
+  // }, []);
+
+  const getPastRounds = () => {
     let rounds = [];
     for (let index = 0; index < player.rounds.length; index++) {
       let round = player.rounds[index].roundTotal;
       rounds.push(round);
     }
     setPastRounds(rounds);
-    console.log(pastRounds);
   };
-
   const addNewGolfBag = (newGolfBag) => {
     axios
       .post(
@@ -62,7 +63,9 @@ function App() {
   const addRoundToGolfer = (round) => {
     axios
       .post(`http://localhost:5000/api/round/addRound/${player._id}`, round)
-      .then((res) => setPlayer(res.data));
+      .then((res) => {
+        setPlayer(res.data);
+      });
   };
 
   const registerNewGofler = (newGolfer) => {
@@ -123,7 +126,9 @@ function App() {
         />
         <Route
           path="/golfFriends"
-          render={(props) => <GolfFriends {...props} player={player} />}
+          render={(props) => (
+            <GolfFriends {...props} friends={player.friends} />
+          )}
         />
       </Switch>
     </div>

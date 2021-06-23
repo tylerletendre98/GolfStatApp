@@ -10,10 +10,10 @@ const golferSchema = new mongoose.Schema({
     email:{type: String, unique: true, required: true, minlength: 5, maxlenght: 255},
     password:{type: String, required: true, maxlenght: 1024, minlength: 5},
     belongsToClub:{type: Boolean, default: false},
-    golfBag: {type:[golfBagSchema]},
+    golfBag: {type: {golfBagSchema}},
     dexterity: {type: String, required: true},
     handicap: {type: Number, required: true},
-    friends:{type:Array},
+    friends:{type:Array , default: []},
     rounds: {type:[roundSchema], default: []}
 });
 
