@@ -7,6 +7,7 @@ import ScoreCard from "./components/Pages/Scorcard/ScoreCard";
 import Login from "./components/Pages/Login";
 import RegisterPage from "./components/Pages/registerUser/registerUser";
 import GolferData from "./components/Golferdata/golferData";
+import GolfFriends from "./components/GolfFriends/golfFriends";
 import AddGolfBag from "./components/addGolfBag/addGolfBag";
 import React, { useState, useEffect } from "react";
 import jwtDecode from "jwt-decode";
@@ -74,10 +75,10 @@ function App() {
       });
   };
 
-  const deleteRound = (roundId) => {
+  const deleteRound = (playerId, roundId) => {
     axios
       .delete(
-        `http://localhost:5000/api/round/deleteRound/${player._id}/${roundId}`
+        `http://localhost:5000/api/round/deleteRound/${playerId}/${roundId}`
       )
       .then((res) => setPlayer(res.data));
   };
@@ -119,6 +120,10 @@ function App() {
         <Route
           path="/golferData"
           render={(props) => <GolferData {...props} pastRounds={pastRounds} />}
+        />
+        <Route
+          path="/golfFriends"
+          render={(props) => <GolfFriends {...props} player={player} />}
         />
       </Switch>
     </div>

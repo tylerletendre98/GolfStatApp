@@ -2,7 +2,7 @@ import "./roundData.css";
 
 const RoundData = (props) => {
   const handleClick = (roundId) => {
-    props.deleteRound(roundId);
+    props.deleteRound(props.player._id, roundId);
   };
 
   if (props.player.length === 0) {

@@ -1,0 +1,13 @@
+.container-friend {
+  display: inline-block;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.container-round {
+  display: flex;
+  border-style: solid;
+  border-color: darkgoldenrod;
+  border-width: 5px;
+}

@@ -83,11 +83,13 @@ router.get('/rounds', async (req,res)=>{
 
 router.delete('/deleteRound/:golferId/:roundId', async (req,res)=>{
     try{
-        const golfer = await Golfer.findById(req.params.golferId)
-        const round = await Round.findById(req.params.roundId)
-        await round.remove()
-        await golfer.save()
-        return res.send(golfer)
+       const golfer = await Golfer.findById(req.params.golferId);
+       if (!golfer) return res.status(400).send(`The user id "${req.params.golferId}" does not exist.`);
+
+       const filteredRounds = golfer.rounds.filter((round)=> round._id != req.params.roundId);
+       golfer.rounds = filteredRounds;
+       await golfer.save();
+       return res.send(golfer)
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`)
     }

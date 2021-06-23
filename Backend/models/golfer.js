@@ -13,6 +13,7 @@ const golferSchema = new mongoose.Schema({
     golfBag: {type:[golfBagSchema]},
     dexterity: {type: String, required: true},
     handicap: {type: Number, required: true},
+    friends:{type:Array},
     rounds: {type:[roundSchema], default: []}
 });
 

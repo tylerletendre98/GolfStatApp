@@ -145,6 +145,17 @@ router.post('/', async (req,res)=>{
     }
 });
 
+router.post(`/:golferId/addFriend/:friendId`, async (req,res)=>{
+    try{
+        const golfer = await Golfer.findById(req.params.golferId);
+        const friend = await Golfer.findById(req.params.friendId);
+        golfer.friends.push(friend)
+        await golfer.save()
+        return res.send(golfer)
+    }catch(ex){
+        return res.status(500).send(`Internal Server Error: ${ex}`)
+    }
+});
 
 
 
