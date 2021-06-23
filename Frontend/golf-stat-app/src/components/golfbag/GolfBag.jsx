@@ -2,7 +2,6 @@ import "./golfBag.css";
 import { Link } from "react-router-dom";
 
 const GolfBag = (props) => {
-  console.log(props.player.golfBag);
   if (props.player.golfBag.length !== 0) {
     return (
       <div>

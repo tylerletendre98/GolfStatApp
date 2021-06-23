@@ -6,6 +6,7 @@ import PlayerPage from "./components/Pages/PlayerPage";
 import ScoreCard from "./components/Pages/Scorcard/ScoreCard";
 import Login from "./components/Pages/Login";
 import RegisterPage from "./components/Pages/registerUser/registerUser";
+import GolferData from "./components/Golferdata/golferData";
 import AddGolfBag from "./components/addGolfBag/addGolfBag";
 import React, { useState, useEffect } from "react";
 import jwtDecode from "jwt-decode";
@@ -16,6 +17,7 @@ function App() {
   const [round, setRound] = useState();
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
   const [newGolfBag, setNewGolfBag] = useState();
+  const [pastRounds, setPastRounds] = useState([]);
 
   useEffect(() => {
     const jwt = localStorage.getItem("token");
@@ -31,10 +33,21 @@ function App() {
         .then((res) => {
           setPlayer(res.data);
         });
+      getPastRounds(player);
     } catch (err) {
       console.log(err);
     }
   }, [jwt]);
+
+  const getPastRounds = (player) => {
+    let rounds = [];
+    for (let index = 0; index < player.rounds.length; index++) {
+      let round = player.rounds[index].roundTotal;
+      rounds.push(round);
+    }
+    setPastRounds(rounds);
+    console.log(pastRounds);
+  };
 
   const addNewGolfBag = (newGolfBag) => {
     axios
@@ -102,6 +115,10 @@ function App() {
           render={(props) => (
             <AddGolfBag {...props} addNewGolfBag={addNewGolfBag} />
           )}
+        />
+        <Route
+          path="/golferData"
+          render={(props) => <GolferData {...props} pastRounds={pastRounds} />}
         />
       </Switch>
     </div>

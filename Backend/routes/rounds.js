@@ -1,6 +1,5 @@
 const express = require('express');
 const Golfer = require('../models/golfer');
-const { findById, findByIdAndRemove, findByIdAndDelete } = require('../models/round');
 const Round = require('../models/round');
 const router = express.Router();
 
@@ -84,9 +83,10 @@ router.get('/rounds', async (req,res)=>{
 
 router.delete('/deleteRound/:golferId/:roundId', async (req,res)=>{
     try{
-        await Round.findByIdAndDelete(req.params.roundId)
-        golfer = await Golfer.findById(req.params.golferId)
-        golfer.save()
+        const golfer = await Golfer.findById(req.params.golferId)
+        const round = await Round.findById(req.params.roundId)
+        await round.remove()
+        await golfer.save()
         return res.send(golfer)
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`)

@@ -37,6 +37,9 @@ const NavBar = (props) => {
           <Link to="/scorecard">
             <button>Scorecard</button>
           </Link>
+          <Link to="/golferData">
+            <button>Player Data</button>
+          </Link>
           <Link to="/">
             <button onClick={handleClick}>Logout</button>
           </Link>
