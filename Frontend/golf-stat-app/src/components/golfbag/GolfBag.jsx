@@ -2,7 +2,7 @@ import "./golfBag.css";
 import { Link } from "react-router-dom";
 
 const GolfBag = (props) => {
-  if (props.player.golfBag !== undefined) {
+  if (props.golfBag !== undefined) {
     return (
       <div>
         <div>
@@ -10,22 +10,22 @@ const GolfBag = (props) => {
         </div>
         <div className="golfbag">
           <div>
-            <p>Driver: {props.player.golfBag.driver}</p>
+            <p>Driver: {props.golfBag.driver}</p>
           </div>
           <div>
-            <p>Three Wood: {props.player.golfBag.threeWood}</p>
+            <p>Three Wood: {props.golfBag.threeWood}</p>
           </div>
           <div>
-            <p>Three Hybrid: {props.player.golfBag.threeHybrid}</p>
+            <p>Three Hybrid: {props.golfBag.threeHybrid}</p>
           </div>
           <div>
-            <p>Iron Set:{props.player.golfBag.ironSet}</p>
+            <p>Iron Set:{props.golfBag.ironSet}</p>
           </div>
           <div>
-            <p>Wedges:{props.player.golfBag.wedges}</p>
+            <p>Wedges:{props.golfBag.wedges}</p>
           </div>
           <div>
-            <p>Putter: {props.player.golfBag.putter}</p>
+            <p>Putter: {props.golfBag.putter}</p>
           </div>
         </div>
         <div>

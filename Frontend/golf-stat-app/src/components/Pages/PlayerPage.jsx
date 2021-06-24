@@ -11,7 +11,7 @@ const PlayerPage = (props) => {
       <div className="container-player-info">
         <PlayerInfo player={props.player} />
         <RoundData player={props.player} deleteRound={props.deleteRound} />
-        <GolfBag player={props.player} />
+        <GolfBag golfBag={props.player.golfBag} />
       </div>
     );
 };

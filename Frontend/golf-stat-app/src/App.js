@@ -9,6 +9,8 @@ import RegisterPage from "./components/Pages/registerUser/registerUser";
 import GolferData from "./components/Golferdata/golferData";
 import GolfFriends from "./components/GolfFriends/golfFriends";
 import AddGolfBag from "./components/addGolfBag/addGolfBag";
+import EditProfile from "./components/EditProfle/EditProfile";
+import EditGolfBag from "./components/editGolfbag/editGolfBag";
 import React, { useState, useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
@@ -66,6 +68,15 @@ function App() {
       .then((res) => {
         setPlayer(res.data);
       });
+  };
+
+  const editProfile = (newProfile) => {
+    axios
+      .put(
+        `http://localhost:5000/api/golfer/updateGolfer/${player._id}`,
+        newProfile
+      )
+      .then((res) => setPlayer(res.data));
   };
 
   const registerNewGofler = (newGolfer) => {
@@ -128,6 +139,12 @@ function App() {
           path="/golfFriends"
           render={(props) => (
             <GolfFriends {...props} friends={player.friends} />
+          )}
+        />
+        <Route
+          path="/editProfile"
+          render={(props) => (
+            <EditProfile {...props} player={player} editProfile={editProfile} />
           )}
         />
       </Switch>

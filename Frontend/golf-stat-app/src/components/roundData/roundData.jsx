@@ -1,12 +1,29 @@
 import "./roundData.css";
+import { Link } from "react-router-dom";
 
 const RoundData = (props) => {
   const handleClick = (roundId) => {
     props.deleteRound(props.player._id, roundId);
   };
 
-  if (props.player.length === 0) {
-    return <div>This player hasnt entered any rounds</div>;
+  if (props.player.rounds.length === 0) {
+    return (
+      <div>
+        <div>
+          <h3>Rounds:</h3>
+        </div>
+        <div className="round-data">
+          <div>
+            <p>This player doesnt have any Rounds.</p>
+          </div>
+        </div>
+        <div>
+          <Link to="/scorecard">
+            <button>Enter in a round!</button>
+          </Link>
+        </div>
+      </div>
+    );
   } else {
     return (
       <div>

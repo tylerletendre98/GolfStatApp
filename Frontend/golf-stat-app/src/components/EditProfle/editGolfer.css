@@ -1,0 +1,10 @@
+.golfer-form {
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+  padding: 10px;
+}
+
+.golfer-form input {
+  width: 210px;
+}

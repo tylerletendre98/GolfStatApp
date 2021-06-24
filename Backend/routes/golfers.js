@@ -46,7 +46,7 @@ router.get('/golfer/:id', async (req,res)=>{
 })
 
 //update a golfer
-router.put('/updateGolfer/:id', auth,  async (req,res)=>{
+router.put('/updateGolfer/:id',  async (req,res)=>{
     try{
         const golfer = await Golfer.findByIdAndUpdate(req.params.id,
             {
@@ -155,7 +155,7 @@ router.post(`/:golferId/addFriend/:friendId`, async (req,res)=>{
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`)
     }
-});
+})
 
 
 
