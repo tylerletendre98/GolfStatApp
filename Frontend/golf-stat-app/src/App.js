@@ -142,7 +142,13 @@ function App() {
         />
         <Route
           path="/golferData"
-          render={(props) => <GolferData {...props} pastRounds={pastRounds} />}
+          render={(props) => (
+            <GolferData
+              {...props}
+              pastRounds={pastRounds}
+              getPastRounds={getPastRounds}
+            />
+          )}
         />
         <Route
           path="/golfFriends"

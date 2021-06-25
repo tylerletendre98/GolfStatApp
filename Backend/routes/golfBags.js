@@ -81,6 +81,7 @@ router.put(`/updateGolfBag/:golferId/:golfBagId`, async (req,res)=>{
 
             await golfBag.save()
             golfer.golfBag= golfBag
+            await golfer.save()
             return res.send(golfer)
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`);

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 const GolferData = (props) => {
-  if (props.pastRounds.length === 0) {
+  useEffect(() => {
+    props.getPastRounds(props.player);
+  }, []);
+  if (props.pastRounds === undefined) {
     return <div>loading...</div>;
   } else {
     return (
