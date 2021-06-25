@@ -33,7 +33,7 @@ const RoundData = (props) => {
         <div>
           {props.player.rounds.map((round) => {
             return (
-              <div>
+              <div className="round-data-container">
                 <div className="round-data" key={round._id}>
                   <div>
                     <p>Course Name: {round.courseName}</p>

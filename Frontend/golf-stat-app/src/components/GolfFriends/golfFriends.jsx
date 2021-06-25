@@ -1,7 +1,9 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./golfFriend.css";
 
 const GolfFriends = (props) => {
-  console.log(props.friends.length);
   if (props.friends.length !== 0) {
     return (
       <div>
@@ -23,7 +25,9 @@ const GolfFriends = (props) => {
           <p>this golfer has no friends</p>
         </div>
         <div>
-          <button>Find Friends</button>
+          <Link to="/viewOtherGolfers">
+            <button>Find Friends</button>
+          </Link>
         </div>
       </div>
     );

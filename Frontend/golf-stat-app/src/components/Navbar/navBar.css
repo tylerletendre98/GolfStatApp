@@ -4,7 +4,11 @@
 
 .navbar ul {
   display: flex;
-  justify-content: space-evenly;
+  margin-left: 20px;
   margin: 10px;
   background-color: yellow;
+}
+
+button {
+  margin-left: 30px;
 }
