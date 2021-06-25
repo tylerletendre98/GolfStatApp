@@ -29,7 +29,9 @@ const GolfBag = (props) => {
           </div>
         </div>
         <div>
-          <button>Edit Golf Bag</button>
+          <Link to="/editGolfbag">
+            <button>Edit Golf Bag</button>
+          </Link>
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 const GolfBag = require('../models/golfbag');
 const Golfer = require('../models/golfer');
 const express = require('express');
+const { findById } = require('../models/golfbag');
 const router = express.Router();
 
 router.post('/addGolfBag', async (req,res)=>{
@@ -59,9 +60,10 @@ router.delete(`/deleteGolfBag/:id`, async (req,res)=>{
     }
 });
 
-router.put(`/updateGolfBag/:id`, async (req,res)=>{
+router.put(`/updateGolfBag/:golferId/:golfBagId`, async (req,res)=>{
     try{
-        const golfBag = await GolfBag.findByIdAndUpdate(req.params.id,
+        const golfer = await Golfer.findById(req.params.golferId)
+        const golfBag = await GolfBag.findByIdAndUpdate(req.params.golfBagId,
             {
             driver: req.body.driver,
             threeWood: req.body.threeWood,
@@ -78,7 +80,8 @@ router.put(`/updateGolfBag/:id`, async (req,res)=>{
             does not exist.`);
 
             await golfBag.save()
-            return res.send(golfBag)
+            golfer.golfBag= golfBag
+            return res.send(golfer)
     }catch(ex){
         return res.status(500).send(`Internal Server Error: ${ex}`);
     }

@@ -19,7 +19,6 @@ function App() {
   const [player, setPlayer] = useState();
   const [round, setRound] = useState();
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
-  const [newGolfBag, setNewGolfBag] = useState();
   const [pastRounds, setPastRounds] = useState();
 
   useEffect(
@@ -75,6 +74,16 @@ function App() {
       .put(
         `http://localhost:5000/api/golfer/updateGolfer/${player._id}`,
         newProfile
+      )
+      .then((res) => setPlayer(res.data));
+  };
+
+  const editGolfBag = (newGolfBag) => {
+    console.log(newGolfBag);
+    axios
+      .put(
+        `http://localhost:5000/api/golfBag/updateGolfBag/${player._id}/${player.golfBag._id}`,
+        newGolfBag
       )
       .then((res) => setPlayer(res.data));
   };
@@ -145,6 +154,16 @@ function App() {
           path="/editProfile"
           render={(props) => (
             <EditProfile {...props} player={player} editProfile={editProfile} />
+          )}
+        />
+        <Route
+          path="/editGolfbag"
+          render={(props) => (
+            <EditGolfBag
+              {...props}
+              golfBag={player.golfBag}
+              editGolfBag={editGolfBag}
+            />
           )}
         />
       </Switch>
