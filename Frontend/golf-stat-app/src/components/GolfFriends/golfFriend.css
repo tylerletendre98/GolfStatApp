@@ -1,13 +1,19 @@
-.container-friend {
-  display: inline-block;
+.friend-container {
+  /* display: flex; */
+  justify-content: center;
+  margin-left: 500px;
+}
+
+.friend {
   border-color: black;
   border-width: 5px;
   border-style: solid;
+  align-items: center;
+  max-width: 30vw;
+  margin-top: 20px;
 }
-
-.container-round {
-  display: flex;
-  border-style: solid;
-  border-color: darkgoldenrod;
+.round {
+  border-color: white;
   border-width: 5px;
+  border-style: solid;
 }

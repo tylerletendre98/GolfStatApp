@@ -99,6 +99,13 @@ function App() {
       });
   };
 
+  const addFriendToGolfer = (friendId) => {
+    axios
+      .post(
+        `http://localhost:5000/api/golfer/${player._id}/addFriend/${friendId}`
+      )
+      .then((res) => setPlayer(res.data));
+  };
   const deleteRound = (playerId, roundId) => {
     axios
       .delete(
@@ -175,7 +182,13 @@ function App() {
         />
         <Route
           path="/viewOtherGolfers"
-          render={(props) => <ViewGolfers {...props} />}
+          render={(props) => (
+            <ViewGolfers
+              {...props}
+              playerId={player._id}
+              addFriendToGolfer={addFriendToGolfer}
+            />
+          )}
         />
       </Switch>
     </div>

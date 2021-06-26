@@ -145,6 +145,7 @@ router.post('/', async (req,res)=>{
     }
 });
 
+// Add friend to golfer
 router.post(`/:golferId/addFriend/:friendId`, async (req,res)=>{
     try{
         const golfer = await Golfer.findById(req.params.golferId);
@@ -157,6 +158,17 @@ router.post(`/:golferId/addFriend/:friendId`, async (req,res)=>{
     }
 })
 
+//finds all golfers but themself
+router.get(`/:golferId/findGolfers`, async (req,res)=>{
+    try{
+        const golfers = await Golfer.find()
+        const newFriends = golfers.filter((golfer)=> golfer._id != req.params.golferId);
+
+        return res.send(newFriends);
+    }catch(ex){
+        return res.status(500).send(`Internal Server Error: ${ex}`)
+    }
+})
 
 
 module.exports = router;

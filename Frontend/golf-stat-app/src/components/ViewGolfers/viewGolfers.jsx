@@ -2,13 +2,18 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./viewGolfer.css";
 
-const ViewGolfers = () => {
+const ViewGolfers = (props) => {
   const [golfers, setGolfers] = useState();
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/golfer/golfers`)
+      .get(`http://localhost:5000/api/golfer/${props.playerId}/findgolfers`)
       .then((res) => setGolfers(res.data));
-  }, []);
+  }, [golfers]);
+
+  const handleClick = (friendId) => {
+    props.addFriendToGolfer(friendId);
+    alert(`Successfully added Friend to friends list`);
+  };
   if (golfers === undefined) {
     return (
       <div>
@@ -33,7 +38,9 @@ const ViewGolfers = () => {
                   <p>Dexterity: {golfer.dexterity}</p>
                 </div>
                 <div>
-                  <button>Add this golfer</button>
+                  <button onClick={() => handleClick(golfer._id)}>
+                    Add this golfer
+                  </button>
                 </div>
               </div>
             </div>
