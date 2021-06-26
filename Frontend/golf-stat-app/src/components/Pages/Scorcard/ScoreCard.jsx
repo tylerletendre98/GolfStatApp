@@ -134,7 +134,7 @@ const ScoreCard = (props) => {
     setHoleEighteenScore();
     props.addARoundToGolfer(newRound);
     alert("Successfully added round");
-    window.location = "/player";
+    // window.location = "/player";
   };
   return (
     <div>

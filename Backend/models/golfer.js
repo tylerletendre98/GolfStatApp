@@ -3,7 +3,7 @@ const mongoose= require('mongoose');
 const config = require('config');
 const jwt = require('jsonwebtoken');
 const {golfBagSchema} = require('./golfbag');
-const {roundSchema} = require('./round');
+const {Round} = require('./round');
 
 const golferSchema = new mongoose.Schema({
     name:{type: String, required: true, minlength: 2, maxlenght: 60},
@@ -14,7 +14,7 @@ const golferSchema = new mongoose.Schema({
     dexterity: {type: String, required: true},
     handicap: {type: Number, required: true},
     friends:{type:Array , default: []},
-    rounds: {type:[roundSchema], default: []}
+    rounds: {type: [Round.schema]}
 });
 
 golferSchema.methods.generateAuthToken = function(){

@@ -1,6 +1,6 @@
 const Golfer = require('../models/golfer');
 const GolfBag= require('../models/golfbag');
-const Round = require('../models/round');
+const {Round} = require('../models/round');
 const auth = require('../middleware/auth');
 const express = require('express');
 const bcrypt = require('bcrypt');
