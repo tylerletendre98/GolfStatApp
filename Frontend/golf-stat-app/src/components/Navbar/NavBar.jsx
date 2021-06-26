@@ -25,6 +25,9 @@ const NavBar = (props) => {
             <Link to="/register">
               <button>Register</button>
             </Link>
+            <Link to="/exploreCourses">
+              <button>Explore Courses</button>
+            </Link>
           </ul>
         </nav>
       </div>
@@ -51,6 +54,9 @@ const NavBar = (props) => {
             </Link>
             <Link to="/golfFriends">
               <button>Golf Friends</button>
+            </Link>
+            <Link to="/exploreCourses">
+              <button>Explore Courses</button>
             </Link>
             <Link to="/">
               <button onClick={handleClick}>Logout</button>

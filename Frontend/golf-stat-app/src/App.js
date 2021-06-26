@@ -11,6 +11,7 @@ import GolfFriends from "./components/GolfFriends/golfFriends";
 import AddGolfBag from "./components/addGolfBag/addGolfBag";
 import EditProfile from "./components/EditProfle/EditProfile";
 import EditGolfBag from "./components/editGolfbag/editGolfBag";
+import ExploreCourses from "./components/exploreCourses/exploreCourse";
 import ViewGolfers from "./components/ViewGolfers/viewGolfers";
 import React, { useState, useEffect } from "react";
 import jwtDecode from "jwt-decode";
@@ -189,6 +190,10 @@ function App() {
               addFriendToGolfer={addFriendToGolfer}
             />
           )}
+        />
+        <Route
+          path="/exploreCourses"
+          render={(props) => <ExploreCourses {...props} />}
         />
       </Switch>
     </div>
