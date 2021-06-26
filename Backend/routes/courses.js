@@ -48,6 +48,15 @@ router.get(`/getCourses`, async (req,res)=>{
     }
 });
 
+router.get(`/getOneCourse/:courseId`, async (req,res)=>{
+    try{
+        const course = await Course.findById(req.params.courseId)
+        return res.send(course)
+    }catch(ex){
+        return res.status(500).send(`Internal Server Error: ${ex}`);
+    }
+})
+
 router.delete(`/deleteCourse/:courseId`, async (req,res)=>{
     try{
         const course = await Course.findById(req.params.courseId)

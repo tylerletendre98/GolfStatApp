@@ -22,6 +22,7 @@ function App() {
   const [round, setRound] = useState();
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
   const [pastRounds, setPastRounds] = useState();
+  const [courses, setCourses] = useState();
 
   useEffect(
     () => {
@@ -42,9 +43,11 @@ function App() {
     [player]
   );
 
-  // useEffect(() => {
-  //   getPastRounds();
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/course/getCourses`)
+      .then((res) => setCourses(res.data));
+  }, []);
 
   const getPastRounds = () => {
     let rounds = [];
@@ -133,6 +136,7 @@ function App() {
               addARoundToGolfer={addRoundToGolfer}
               round={round}
               player={player}
+              courses={courses}
             />
           )}
         />
