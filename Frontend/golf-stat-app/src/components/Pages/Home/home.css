@@ -1,3 +1,32 @@
-.homepage {
-  background-color: darkgreen;
+.container {
+  margin-top: 40px;
+}
+
+.info-column {
+  border-radius: 5px;
+}
+.info {
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: wheat;
+}
+
+li {
+  margin-top: 10px;
+}
+
+img {
+  border-radius: 20px;
+  box-shadow: black;
+}
+
+.info-title h4 {
+  background-color: wheat;
+}
+.info-body ul {
+  background-color: wheat;
+}
+.info-body li {
+  background-color: wheat;
 }

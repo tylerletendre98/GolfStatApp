@@ -8,10 +8,32 @@ const PlayerPage = (props) => {
     return <div>nothing loaded</div>;
   } else
     return (
-      <div className="container-player-info">
-        <PlayerInfo player={props.player} />
-        <RoundData player={props.player} deleteRound={props.deleteRound} />
-        <GolfBag golfBag={props.player.golfBag} />
+      <div class="container">
+        <div className="row">
+          <div className="profile-title">
+            <h2>{props.player.name}'s Profile</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div>
+              <PlayerInfo player={props.player} />
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <RoundData
+                player={props.player}
+                deleteRound={props.deleteRound}
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <GolfBag golfBag={props.player.golfBag} />
+            </div>
+          </div>
+        </div>
       </div>
     );
 };

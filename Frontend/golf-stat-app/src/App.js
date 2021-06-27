@@ -160,6 +160,7 @@ function App() {
               {...props}
               pastRounds={pastRounds}
               getPastRounds={getPastRounds}
+              player={player}
             />
           )}
         />

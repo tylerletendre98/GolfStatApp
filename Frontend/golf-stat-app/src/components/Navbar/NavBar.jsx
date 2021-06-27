@@ -14,56 +14,126 @@ const NavBar = (props) => {
         <div>
           <h1>Golf Stat App</h1>
         </div>
-        <nav className="navbar">
-          <ul>
-            <Link to="/">
-              <button>Home</button>
-            </Link>
-            <Link to="/login">
-              <button>Login</button>
-            </Link>
-            <Link to="/register">
-              <button>Register</button>
-            </Link>
-            <Link to="/exploreCourses">
-              <button>Explore Courses</button>
-            </Link>
+        <nav className="nav justify-content-center">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style={{ backgroundColor: "wheat" }}
+              >
+                <Link to="/">
+                  <button>Home</button>
+                </Link>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
+                <Link to="/exploreCourses">
+                  <button>Explore Courses</button>
+                </Link>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
+                <Link to="/login">
+                  <button>Login</button>
+                </Link>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
     );
   } else
     return (
-      <div>
-        <div>
-          <h1>Golf Stat App</h1>
-        </div>
-        <nav className="navbar">
-          <ul>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            style={{ backgroundColor: "wheat" }}
+          >
             <Link to="/">
               <button>Home</button>
             </Link>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
             <Link to="/player">
               <button>Player Page</button>
             </Link>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
             <Link to="/scorecard">
               <button>Add A Round</button>
             </Link>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
             <Link to="/golferData">
               <button>Player Data</button>
             </Link>
-            <Link to="/golfFriends">
-              <button>Golf Friends</button>
-            </Link>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
             <Link to="/exploreCourses">
               <button>Explore Courses</button>
             </Link>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
+            <Link to="/golfFriends">
+              <button>Golf Friends</button>
+            </Link>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
             <Link to="/">
               <button onClick={handleClick}>Logout</button>
             </Link>
-          </ul>
-        </nav>
-      </div>
+          </a>
+        </li>
+      </ul>
+      // <div>
+      //   <nav className="navbar ">
+      //     <div className="container-fluid">
+      //       <ul>
+      //         <Link to="/">
+      //           <button>Home</button>
+      //         </Link>
+      //         <Link to="/player">
+      //           <button>Player Page</button>
+      //         </Link>
+      //         <Link to="/scorecard">
+      //           <button>Add A Round</button>
+      //         </Link>
+      //         <Link to="/golferData">
+      //           <button>Player Data</button>
+      //         </Link>
+      //         <Link to="/golfFriends">
+      //           <button>Golf Friends</button>
+      //         </Link>
+      //         <Link to="/exploreCourses">
+      //           <button>Explore Courses</button>
+      //         </Link>
+      //         <Link to="/">
+      //           <button onClick={handleClick}>Logout</button>
+      //         </Link>
+      //       </ul>
+      //     </div>
+      //   </nav>
+      // </div>
     );
 };
 
