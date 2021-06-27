@@ -33,7 +33,7 @@ const ViewGolfers = (props) => {
                   <div>
                     <div className="golfer">
                       <div>
-                        <p>Name: {golfer.name}</p>
+                        <h4>{golfer.name}</h4>
                       </div>
                       <div>
                         <p>Handicap: {golfer.handicap}</p>

@@ -49,6 +49,9 @@ const GolfFriends = (props) => {
                         </div>
                       </div>
                     </div>
+                    <div>
+                      <button>Delete Friend</button>
+                    </div>
                   </div>
                 </div>
                 <div class="col"></div>

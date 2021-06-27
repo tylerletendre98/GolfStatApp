@@ -432,14 +432,21 @@ const ScoreCard = (props) => {
                       onChange={handleHoleEighteen}
                     />
                   </td>
-                  <td>{roundTotal}</td>
+                  <td>
+                    <input type="number" name="" id="" />
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div>
             <label htmlFor="">Submit Round:</label>
-            <input type="submit" name="" id="" placeholder={roundTotal} />
+            <input
+              type="submit"
+              name=""
+              id=""
+              style={{ backgroundColor: "wheat" }}
+            />
           </div>
         </form>
         <div>
@@ -817,7 +824,12 @@ const ScoreCard = (props) => {
           </div>
           <div>
             <label htmlFor="">Submit Round:</label>
-            <input type="submit" name="" id="" />
+            <input
+              type="submit"
+              name=""
+              id=""
+              style={{ backgroundColor: "wheat" }}
+            />
           </div>
         </form>
         <div>
