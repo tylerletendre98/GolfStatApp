@@ -20,6 +20,7 @@ const EditGolfBag = (props) => {
       putter: putter,
     };
     props.editGolfBag(newGolfBag);
+    window.location = "/player";
   };
 
   const handleDriver = (e) => {

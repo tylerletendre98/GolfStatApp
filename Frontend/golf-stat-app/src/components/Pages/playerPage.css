@@ -1,3 +1,11 @@
 .profile-title {
+  background-color: wheat;
   margin-bottom: 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 15px;
+}
+.profile-title h2 {
+  background-color: wheat;
 }

@@ -1,6 +1,38 @@
 td input {
   width: 45px;
 }
-.table-container {
-  color: white;
+.table-container th {
+  background-color: wheat;
+}
+.table-container td {
+  background-color: wheat;
+}
+.table-container table {
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  padding: 10px;
+}
+
+.select-course h3 {
+  background-color: wheat;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.select-container select {
+  background-color: wheat;
+  border-radius: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.select-container option {
+  background-color: wheat;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.scorecard-form-body input {
+  background-color: wheat;
 }

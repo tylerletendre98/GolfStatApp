@@ -43,6 +43,13 @@ const NavBar = (props) => {
                 </Link>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style={{ backgroundColor: "wheat" }}>
+                <Link to="/register">
+                  <button>Register</button>
+                </Link>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -105,35 +112,6 @@ const NavBar = (props) => {
           </a>
         </li>
       </ul>
-      // <div>
-      //   <nav className="navbar ">
-      //     <div className="container-fluid">
-      //       <ul>
-      //         <Link to="/">
-      //           <button>Home</button>
-      //         </Link>
-      //         <Link to="/player">
-      //           <button>Player Page</button>
-      //         </Link>
-      //         <Link to="/scorecard">
-      //           <button>Add A Round</button>
-      //         </Link>
-      //         <Link to="/golferData">
-      //           <button>Player Data</button>
-      //         </Link>
-      //         <Link to="/golfFriends">
-      //           <button>Golf Friends</button>
-      //         </Link>
-      //         <Link to="/exploreCourses">
-      //           <button>Explore Courses</button>
-      //         </Link>
-      //         <Link to="/">
-      //           <button onClick={handleClick}>Logout</button>
-      //         </Link>
-      //       </ul>
-      //     </div>
-      //   </nav>
-      // </div>
     );
 };
 

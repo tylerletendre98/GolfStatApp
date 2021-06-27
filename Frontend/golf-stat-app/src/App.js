@@ -4,7 +4,7 @@ import NavBar from "./components/Navbar/NavBar";
 import Home from "./components/Pages/Home/Home";
 import PlayerPage from "./components/Pages/PlayerPage";
 import ScoreCard from "./components/Pages/Scorcard/ScoreCard";
-import Login from "./components/Pages/Login";
+import Login from "./components/Pages/Login/Login";
 import RegisterPage from "./components/Pages/registerUser/registerUser";
 import GolferData from "./components/Golferdata/golferData";
 import GolfFriends from "./components/GolfFriends/golfFriends";

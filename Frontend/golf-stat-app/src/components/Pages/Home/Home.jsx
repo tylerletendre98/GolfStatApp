@@ -50,6 +50,11 @@ const Home = () => {
                       visual representation of the difference in youre round
                       total
                     </li>
+                    <li>
+                      If you go over to the explore courses page you'll be able
+                      to see the current courses we have avaiable in our app
+                      meaning you can use in the scorecard page!
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -73,11 +78,6 @@ const Home = () => {
                   <li>
                     Being able to join a club that is within our database and be
                     able to see other members that are apart of your club
-                  </li>
-                  <li>
-                    If you go over to the explore courses page you'll be able to
-                    see the current courses we have avaiable in our app meaning
-                    you can use in the scorecard page!
                   </li>
                 </ul>
               </div>

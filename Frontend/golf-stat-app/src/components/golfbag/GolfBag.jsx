@@ -44,8 +44,10 @@ const GolfBag = (props) => {
           <div>
             <h3>Golfbag: </h3>
           </div>
-          <div className="golfbag-body">
-            <p>This player has not entered a golf bag</p>
+          <div className="golfbag-container">
+            <div className="golfbag-body">
+              <p>This player has not entered a golf bag</p>
+            </div>
           </div>
           <Link to="/addGolfBag">
             <button>Add golfBag</button>

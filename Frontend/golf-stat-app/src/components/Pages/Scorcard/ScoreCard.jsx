@@ -179,20 +179,37 @@ const ScoreCard = (props) => {
 
   if (selectedCourse === undefined) {
     return (
-      <div>
-        <div>
-          <h3>Please select a course</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6">
+            <div className="select-course">
+              <h3>Please select a course</h3>
+            </div>
+          </div>
+          <div class="col"></div>
         </div>
-        <div>
-          <select name="" id="selectedCourse" onChange={handleSelect}>
-            <option value="">Select course</option>
-            {props.courses.map((course) => {
-              return <option value={course._id}>{course.courseName}</option>;
-            })}
-            <option value="default">Default</option>
-          </select>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6">
+            <div className="select-container">
+              <select name="" id="selectedCourse" onChange={handleSelect}>
+                <option value="">Select course</option>
+                {props.courses.map((course) => {
+                  return (
+                    <option value={course._id}>{course.courseName}</option>
+                  );
+                })}
+                <option value="default">Default</option>
+              </select>
+            </div>
+          </div>
+          <div class="col"></div>
         </div>
       </div>
+      // <div>
+
+      // </div>
     );
   } else if (selectedCourse == "default") {
     return (
@@ -200,221 +217,226 @@ const ScoreCard = (props) => {
         <div>
           <h3>Scorecard</h3>
         </div>
+        <div></div>
         <form action="" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="">Course name:</label>
-            <input
-              type="text"
-              name=""
-              id=""
-              placeholder="enter course name"
-              onChange={handleCourseName}
-            />
+          <div className="scorecard-form-body">
+            <div>
+              <label htmlFor="">Course name:</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="enter course name"
+                onChange={handleCourseName}
+              />
+            </div>
+            <div>
+              <label htmlFor="">Course Par:</label>
+              <input
+                type="number"
+                name=""
+                id=""
+                placeholder="enter course par"
+                onChange={handleCoursePar}
+              />
+            </div>
           </div>
-          <div>
-            <label htmlFor="">Course Par:</label>
-            <input
-              type="number"
-              name=""
-              id=""
-              placeholder="enter course par"
-              onChange={handleCoursePar}
-            />
+          <div className="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Golfer</th>
+                  <th scope="col">Hole 1</th>
+                  <th scope="col">Hole 2</th>
+                  <th scope="col">Hole 3</th>
+                  <th scope="col">Hole 4</th>
+                  <th scope="col">Hole 5</th>
+                  <th scope="col">Hole 6</th>
+                  <th scope="col">Hole 7</th>
+                  <th scope="col">Hole 8</th>
+                  <th scope="col">Hole 9</th>
+                  <th scope="col">Hole 10</th>
+                  <th scope="col">Hole 11</th>
+                  <th scope="col">Hole 12</th>
+                  <th scope="col">Hole 13</th>
+                  <th scope="col">Hole 14</th>
+                  <th scope="col">Hole 15</th>
+                  <th scope="col">Hole 16</th>
+                  <th scope="col">Hole 17</th>
+                  <th scope="col">Hole 18</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">{props.player.name}</th>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleOne}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleTwo}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleThree}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleFour}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleFive}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleSix}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleSeven}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleEight}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleNine}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleTen}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleEleven}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleTwelve}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleThirteen}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleFourteen}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleFifteen}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleSixteen}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleSeventeen}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      width="10px"
+                      onChange={handleHoleEighteen}
+                    />
+                  </td>
+                  <td>{roundTotal}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Golfer</th>
-                <th scope="col">Hole 1</th>
-                <th scope="col">Hole 2</th>
-                <th scope="col">Hole 3</th>
-                <th scope="col">Hole 4</th>
-                <th scope="col">Hole 5</th>
-                <th scope="col">Hole 6</th>
-                <th scope="col">Hole 7</th>
-                <th scope="col">Hole 8</th>
-                <th scope="col">Hole 9</th>
-                <th scope="col">Hole 10</th>
-                <th scope="col">Hole 11</th>
-                <th scope="col">Hole 12</th>
-                <th scope="col">Hole 13</th>
-                <th scope="col">Hole 14</th>
-                <th scope="col">Hole 15</th>
-                <th scope="col">Hole 16</th>
-                <th scope="col">Hole 17</th>
-                <th scope="col">Hole 18</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">{props.player.name}</th>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleOne}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleTwo}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleThree}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleFour}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleFive}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleSix}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleSeven}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleEight}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleNine}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleTen}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleEleven}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleTwelve}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleThirteen}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleFourteen}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleFifteen}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleSixteen}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleSeventeen}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    width="10px"
-                    onChange={handleHoleEighteen}
-                  />
-                </td>
-                <td>{roundTotal}</td>
-              </tr>
-            </tbody>
-          </table>
           <div>
             <label htmlFor="">Submit Round:</label>
             <input type="submit" name="" id="" placeholder={roundTotal} />
