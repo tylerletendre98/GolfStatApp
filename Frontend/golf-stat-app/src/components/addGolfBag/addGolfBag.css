@@ -1,1 +1,35 @@
+.form-body form {
+  padding-right: 60px;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  padding-left: 7px;
+  background-color: wheat;
+  padding-top: 10px;
+}
 
+.form-body label {
+  border-left-color: black;
+  border-left-width: 5px;
+  border-left-style: solid;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: black;
+  background-color: wheat;
+}
+
+.col-sm-10 {
+  background-color: wheat;
+  border-bottom: black;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+.form-title h3 {
+  background-color: wheat;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}

@@ -6,15 +6,12 @@ const playerInfo = (props) => {
     return <div>Loading...</div>;
   } else {
     return (
-      <div>
-        <div>
+      <div className="player-info-container">
+        <div className="player-title">
           <h3>Player Info</h3>
         </div>
         <div className="player-info">
-          <div>
-            <div>
-              <p>Name: {props.player.name}</p>
-            </div>
+          <div className="player-info-body">
             <div>
               <p>Dexterity: {props.player.dexterity}</p>
             </div>

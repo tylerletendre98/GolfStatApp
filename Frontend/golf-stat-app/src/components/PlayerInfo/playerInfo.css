@@ -1,7 +1,20 @@
+.player-info-container {
+  border-radius: 15px;
+}
 .player-info {
   border-style: solid;
   border-color: black;
   border-width: 5px;
   margin: 10px;
   padding: 5px;
+  background-color: wheat;
+}
+
+.player-info-body p {
+  background-color: wheat;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.player-info-body {
+  background-color: wheat;
 }

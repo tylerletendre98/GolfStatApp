@@ -16,7 +16,7 @@ const PlayerPage = (props) => {
         </div>
         <div class="row">
           <div class="col">
-            <div>
+            <div className="player-info-body">
               <PlayerInfo player={props.player} />
             </div>
           </div>

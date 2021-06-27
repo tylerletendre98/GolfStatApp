@@ -43,68 +43,116 @@ const AddGolfBag = (props) => {
   };
 
   return (
-    <div>
-      <div>
-        <h3>Enter in your golf bag:</h3>
-      </div>
-      <div className="golfbag-form">
-        <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="">Driver: </label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="Club model and brand"
-            onChange={handleDriver}
-          />
-          <hr />
-          <label htmlFor="">3 wood: </label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="Club model and brand"
-            onChange={handleThreeWood}
-          />
-          <hr />
-          <label htmlFor="">3 hybrid: </label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="Club model and brand"
-            onChange={handleThreeHybrid}
-          />
-          <hr />
-          <label htmlFor="">Enter Ironset: </label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="Club model and brand"
-            onChange={handleIronSet}
-          />
-          <hr />
-          <label htmlFor="">Enter Wedges: </label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="Club model and brand"
-            onChange={handleWedges}
-          />
-          <hr />
-          <label htmlFor="">Enter Putter: </label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="Club model and brand"
-            onChange={handlePutter}
-          />
-          <hr />
-          <input type="submit" name="" id="" onClick={handleSubmit} />
-        </form>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div>
+            <div>
+              <div className="form-title">
+                <h3>Enter in your golf bag:</h3>
+              </div>
+              <div className="form-body">
+                <div className="col">
+                  <form action="" onSubmit={handleSubmit}>
+                    <div className="row mb-3">
+                      <label htmlFor="" class="col-sm-2 col-form-label">
+                        Driver:{" "}
+                      </label>
+                      <div className="col-sm-10">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Club model and brand"
+                          onChange={handleDriver}
+                        />
+                      </div>
+                    </div>
+                    <div className="row mb-3">
+                      <label htmlFor="" class="col-sm-2 col-form-label">
+                        3 wood:{" "}
+                      </label>
+                      <div className="col-sm-10">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Club model and brand"
+                          onChange={handleThreeWood}
+                        />
+                      </div>
+                    </div>
+                    <div className="row mb-3">
+                      <label htmlFor="" class="col-sm-2 col-form-label">
+                        3 hybrid:{" "}
+                      </label>
+                      <div className="col-sm-10">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Club model and brand"
+                          onChange={handleThreeHybrid}
+                        />
+                      </div>
+                    </div>
+                    <div className="row mb-3">
+                      <label htmlFor="" class="col-sm-2 col-form-label">
+                        Ironset:{" "}
+                      </label>
+                      <div className="col-sm-10">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Club model and brand"
+                          onChange={handleIronSet}
+                        />
+                      </div>
+                    </div>
+                    <div className="row mb-3">
+                      <label htmlFor="" class="col-sm-2 col-form-label">
+                        Enter Wedges:
+                      </label>
+                      <div className="col-sm-10">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Club model and brand"
+                          onChange={handleWedges}
+                        />
+                      </div>
+                    </div>
+                    <div className="row mb-3">
+                      <label htmlFor="" class="col-sm-2 col-form-label">
+                        Enter Putter:
+                      </label>
+                      <div className="col-sm-10">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Club model and brand"
+                          onChange={handlePutter}
+                        />
+                      </div>
+                    </div>
+                    <input type="submit" name="" id="" onClick={handleSubmit} />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
       </div>
     </div>
   );

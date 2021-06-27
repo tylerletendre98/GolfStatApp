@@ -1,6 +1,16 @@
-.golfbag {
+.golfbag-container {
+  background-color: wheat;
   border-width: 5px;
   border-color: black;
   border-style: solid;
   margin: 10px;
+  border-radius: 5px;
+}
+
+.golfbag-body p {
+  background-color: wheat;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.golfbag-body {
+  background-color: wheat;
 }
