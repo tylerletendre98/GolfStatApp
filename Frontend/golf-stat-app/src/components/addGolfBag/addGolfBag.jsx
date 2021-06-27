@@ -20,7 +20,7 @@ const AddGolfBag = (props) => {
       putter: putter,
     };
     props.addNewGolfBag(newGolfBag);
-    window.location = "/";
+    window.location = "/player";
   };
 
   const handleDriver = (e) => {
@@ -49,7 +49,7 @@ const AddGolfBag = (props) => {
       </div>
       <div className="golfbag-form">
         <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="">Driver:</label>
+          <label htmlFor="">Driver: </label>
           <input
             type="text"
             name=""
@@ -58,7 +58,7 @@ const AddGolfBag = (props) => {
             onChange={handleDriver}
           />
           <hr />
-          <label htmlFor="">3 wood:</label>
+          <label htmlFor="">3 wood: </label>
           <input
             type="text"
             name=""
@@ -67,7 +67,7 @@ const AddGolfBag = (props) => {
             onChange={handleThreeWood}
           />
           <hr />
-          <label htmlFor="">3 hybrid:</label>
+          <label htmlFor="">3 hybrid: </label>
           <input
             type="text"
             name=""
@@ -76,7 +76,7 @@ const AddGolfBag = (props) => {
             onChange={handleThreeHybrid}
           />
           <hr />
-          <label htmlFor="">Enter Ironset:</label>
+          <label htmlFor="">Enter Ironset: </label>
           <input
             type="text"
             name=""
@@ -85,7 +85,7 @@ const AddGolfBag = (props) => {
             onChange={handleIronSet}
           />
           <hr />
-          <label htmlFor="">Enter Wedges:</label>
+          <label htmlFor="">Enter Wedges: </label>
           <input
             type="text"
             name=""
@@ -94,7 +94,7 @@ const AddGolfBag = (props) => {
             onChange={handleWedges}
           />
           <hr />
-          <label htmlFor="">Enter Putter:</label>
+          <label htmlFor="">Enter Putter: </label>
           <input
             type="text"
             name=""

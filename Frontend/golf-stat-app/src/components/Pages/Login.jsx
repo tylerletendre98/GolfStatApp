@@ -30,6 +30,10 @@ const Login = (props) => {
         localStorage.setItem("token", response.data);
         alert("You have successfully logged in!");
         window.location = "/";
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(error.response.data);
       });
   };
 

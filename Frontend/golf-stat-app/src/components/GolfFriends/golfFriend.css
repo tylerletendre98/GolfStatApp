@@ -11,6 +11,7 @@
   align-items: center;
   max-width: 30vw;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 .round {
   border-color: white;

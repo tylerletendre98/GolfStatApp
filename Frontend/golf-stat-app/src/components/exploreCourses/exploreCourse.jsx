@@ -24,23 +24,27 @@ const ExploreCourses = (props) => {
           return (
             <div>
               <div className="course-info">
-                <div>
-                  <h3>Course Name: {course.courseName}</h3>
-                </div>
-                <div>
-                  <img src={course.courseImageUrl} alt="" />
-                </div>
-                <div>
-                  <p>Course Par:{course.coursePar}</p>
-                </div>
-                <div>
-                  <p>Year Founded:{course.yearEstablished}</p>
-                </div>
-                <div>
-                  <p>Course Lenght: {course.courseLength}</p>
-                </div>
-                <div>
-                  <p>Address: {course.courseAddress}</p>
+                <div className="mb-3">
+                  <div>
+                    <img src={course.courseImageUrl} alt="course crest pic" />
+                  </div>
+                  <div>
+                    <div>
+                      <h3>Course Name: {course.courseName}</h3>
+                    </div>
+                    <div>
+                      <p>Course Par:{course.coursePar}</p>
+                    </div>
+                    <div>
+                      <p>Year Founded:{course.yearEstablished}</p>
+                    </div>
+                    <div>
+                      <p>Course Lenght: {course.courseLength}</p>
+                    </div>
+                    <div>
+                      <p>Address: {course.courseAddress}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

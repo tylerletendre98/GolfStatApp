@@ -47,7 +47,7 @@ const NavBar = (props) => {
               <button>Player Page</button>
             </Link>
             <Link to="/scorecard">
-              <button>Scorecard</button>
+              <button>Add A Round</button>
             </Link>
             <Link to="/golferData">
               <button>Player Data</button>

@@ -7,7 +7,7 @@ const Home = () => {
         <h1>Golf Stat App</h1>
       </div>
       <div>
-        <h3>About the app</h3>
+        <h3></h3>
       </div>
     </div>
   );

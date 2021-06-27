@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./golfFriend.css";
 
@@ -13,10 +11,10 @@ const GolfFriends = (props) => {
               <div className="friend">
                 <div className="friend-info">
                   <div>
-                    <p>{friend.name}</p>
+                    <h4>{friend.name}</h4>
                   </div>
                   <div>
-                    <p>{friend.handicap}</p>
+                    <p> Handicap: {friend.handicap}</p>
                   </div>
                   <div className="friend-round">
                     {friend.rounds.map((round) => {
@@ -30,7 +28,7 @@ const GolfFriends = (props) => {
                         return (
                           <div>
                             <div>
-                              <h4>Rounds:</h4>
+                              <h5>Round</h5>
                               <div className="round">
                                 <div>Course Name:{round.courseName}</div>
                                 <div>Round Total:{round.roundTotal}</div>
