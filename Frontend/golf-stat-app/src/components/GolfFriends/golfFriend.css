@@ -1,20 +1,29 @@
-.friend-container {
-  /* display: flex; */
-  justify-content: center;
-  margin-left: 500px;
+.friend-info {
+  background-color: wheat;
+  padding: 10px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 15px;
 }
 
-.friend {
-  border-color: black;
-  border-width: 5px;
-  border-style: solid;
-  align-items: center;
-  max-width: 30vw;
-  margin-top: 20px;
-  flex-wrap: wrap;
+.friend-info h4 {
+  background-color: wheat;
+}
+.friend-info p {
+  background-color: wheat;
+}
+
+.friend-round-container h5 {
+  background-color: wheat;
 }
 .round {
-  border-color: white;
-  border-width: 5px;
+  background-color: wheat;
+}
+
+.friend-round-container {
+  background-color: wheat;
   border-style: solid;
+  border-color: black;
+  border-width: 5px;
 }

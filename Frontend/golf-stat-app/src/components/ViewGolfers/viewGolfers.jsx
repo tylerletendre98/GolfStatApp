@@ -26,22 +26,30 @@ const ViewGolfers = (props) => {
       <div>
         {golfers.map((golfer) => {
           return (
-            <div>
-              <div className="golfer">
-                <div>
-                  <p>Name: {golfer.name}</p>
+            <div class="container">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col-7">
+                  <div>
+                    <div className="golfer">
+                      <div>
+                        <p>Name: {golfer.name}</p>
+                      </div>
+                      <div>
+                        <p>Handicap: {golfer.handicap}</p>
+                      </div>
+                      <div>
+                        <p>Dexterity: {golfer.dexterity}</p>
+                      </div>
+                      <div className="button-background">
+                        <button onClick={() => handleClick(golfer._id)}>
+                          Add this golfer
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p>Handicap: {golfer.handicap}</p>
-                </div>
-                <div>
-                  <p>Dexterity: {golfer.dexterity}</p>
-                </div>
-                <div>
-                  <button onClick={() => handleClick(golfer._id)}>
-                    Add this golfer
-                  </button>
-                </div>
+                <div class="col"></div>
               </div>
             </div>
           );

@@ -7,39 +7,51 @@ const GolfFriends = (props) => {
       <div>
         {props.friends.map((friend) => {
           return (
-            <div className="friend-container">
-              <div className="friend">
-                <div className="friend-info">
-                  <div>
-                    <h4>{friend.name}</h4>
-                  </div>
-                  <div>
-                    <p> Handicap: {friend.handicap}</p>
-                  </div>
-                  <div className="friend-round">
-                    {friend.rounds.map((round) => {
-                      if (round.length === 0) {
-                        return (
-                          <div>
-                            <p>This golfer has no rounds</p>
-                          </div>
-                        );
-                      } else {
-                        return (
-                          <div>
-                            <div>
-                              <h5>Round</h5>
-                              <div className="round">
-                                <div>Course Name:{round.courseName}</div>
-                                <div>Round Total:{round.roundTotal}</div>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      }
-                    })}
+            <div class="container">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+                  <div className="friend-container">
+                    <div className="friend">
+                      <div className="friend-info">
+                        <div>
+                          <h4>{friend.name}</h4>
+                        </div>
+                        <div>
+                          <p> Handicap: {friend.handicap}</p>
+                        </div>
+                        <div className="friend-round">
+                          {friend.rounds.map((round) => {
+                            if (round.length === 0) {
+                              return (
+                                <div>
+                                  <p>This golfer has no rounds</p>
+                                </div>
+                              );
+                            } else {
+                              return (
+                                <div>
+                                  <div className="friend-round-container">
+                                    <h5>Round</h5>
+                                    <div className="round">
+                                      <div>
+                                        <p>Course Name:{round.courseName}</p>
+                                      </div>
+                                      <div>
+                                        <p>Round Total:{round.roundTotal}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            }
+                          })}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                <div class="col"></div>
               </div>
             </div>
           );
