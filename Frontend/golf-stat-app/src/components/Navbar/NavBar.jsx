@@ -11,7 +11,7 @@ const NavBar = (props) => {
   if (props.player === undefined) {
     return (
       <div>
-        <div>
+        <div className="app-title">
           <h1>Golf Stat App</h1>
         </div>
         <nav className="nav justify-content-center">

@@ -457,13 +457,30 @@ const ScoreCard = (props) => {
   } else if (selectedCourse !== "default") {
     return (
       <div>
-        <div>
-          <h3>Scorecard</h3>
+        <div className="container">
+          <div className="row">
+            <div class="col"></div>
+            <div class="col-4">
+              <div className="scorecard-title">
+                <h3>Scorecard</h3>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
         </div>
         <form action="" onSubmit={handleSubmitSelectedCourse}>
-          <div>
-            <h4>Course: {selectedCourse.courseName}</h4>
+          <div className="container">
+            <div className="row">
+              <div class="col"></div>
+              <div class="col-5">
+                <div className="course-name">
+                  <h4>Course: {selectedCourse.courseName}</h4>
+                </div>
+              </div>
+              <div class="col"></div>
+            </div>
           </div>
+
           <div className="table-container">
             <table class="table">
               <thead>

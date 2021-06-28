@@ -1,0 +1,11 @@
+.registration-form form {
+  background-color: wheat;
+  padding: 20px;
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+}
+
+.registration-form label {
+  background-color: wheat;
+}

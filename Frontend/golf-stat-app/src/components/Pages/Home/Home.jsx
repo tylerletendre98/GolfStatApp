@@ -15,7 +15,7 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <div>
-            <h2>About this app</h2>
+            <h2>About the app</h2>
           </div>
         </div>
       </div>

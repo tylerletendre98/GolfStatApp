@@ -36,3 +36,17 @@ td input {
 .scorecard-form-body input {
   background-color: wheat;
 }
+.scorecard-title h3 {
+  background-color: wheat;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+}
+.course-name h4 {
+  background-color: wheat;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 15px;
+}

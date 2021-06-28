@@ -31,3 +31,11 @@ img {
 .info-body li {
   background-color: wheat;
 }
+
+.app-title h1 {
+  background-color: wheat;
+  border-radius: 15px;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+}
