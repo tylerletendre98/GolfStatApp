@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./login.css";
-import jwtDecode from "jwt-decode";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
