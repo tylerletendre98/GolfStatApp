@@ -32,50 +32,62 @@ const EditProfile = (props) => {
     window.location = "/player";
   };
   return (
-    <div>
-      <div>
-        <h3>Edit Profile</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div>
+            <h3>Edit Profile</h3>
+          </div>
+        </div>
+        <div class="col"></div>
       </div>
-      <div className="golfer-form">
-        <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="">Name:</label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder={props.player.name}
-            onChange={handleNameChange}
-          />
-          <hr />
-          <label htmlFor="">Email:</label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder={props.player.email}
-            onChange={handleEmailChange}
-          />
-          <hr />
-          <label htmlFor="">Handicap:</label>
-          <input
-            type="number"
-            name=""
-            id=""
-            placeholder={props.player.handicap}
-            onChange={handleHandicapChange}
-          />
-          <hr />
-          <label htmlFor="">Dexterity</label>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder={props.player.dexterity}
-            onChange={handleDexterityChange}
-          />
-          <hr />
-          <input type="submit" name="" id="" />
-        </form>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-7">
+          <div className="golfer-form">
+            <form action="" onSubmit={handleSubmit}>
+              <label htmlFor="">Name:</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder={props.player.name}
+                onChange={handleNameChange}
+              />
+              <hr />
+              <label htmlFor="">Email:</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder={props.player.email}
+                onChange={handleEmailChange}
+              />
+              <hr />
+              <label htmlFor="">Handicap:</label>
+              <input
+                type="number"
+                name=""
+                id=""
+                placeholder={props.player.handicap}
+                onChange={handleHandicapChange}
+              />
+              <hr />
+              <label htmlFor="">Dexterity</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder={props.player.dexterity}
+                onChange={handleDexterityChange}
+              />
+              <hr />
+              <input type="submit" name="" id="" />
+            </form>
+          </div>
+        </div>
+        <div class="col"></div>
       </div>
     </div>
   );

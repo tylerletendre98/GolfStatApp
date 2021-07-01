@@ -117,6 +117,14 @@ function App() {
       )
       .then((res) => setPlayer(res.data));
   };
+
+  const deleteFriend = (playerId, friendId) => {
+    axios
+      .delete(
+        `http://localhost:5000/api/golfer/deleteFriend/${playerId}/${friendId}`
+      )
+      .then((res) => setPlayer(res.data));
+  };
   return (
     <div className="App">
       <NavBar player={player} />
@@ -167,7 +175,12 @@ function App() {
         <Route
           path="/golfFriends"
           render={(props) => (
-            <GolfFriends {...props} friends={player.friends} />
+            <GolfFriends
+              {...props}
+              player={player}
+              friends={player.friends}
+              deleteFriend={deleteFriend}
+            />
           )}
         />
         <Route

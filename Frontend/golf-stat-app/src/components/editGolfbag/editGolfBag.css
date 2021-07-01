@@ -1,8 +1,16 @@
-.golfBag-form {
+.golfBag-form form {
   border-style: solid;
   border-width: 5px;
   border-color: black;
   padding: 15px;
+  background-color: wheat;
+}
+.golfBag-form input {
+  background-color: white;
+}
+
+.golfBag-form label {
+  background-color: wheat;
 }
 
 .golfBag-form input {

@@ -2,9 +2,18 @@ import { Link } from "react-router-dom";
 import "./golfFriend.css";
 
 const GolfFriends = (props) => {
+  const handleClick = (friendId) => {
+    props.deleteFriend(props.player._id, friendId);
+  };
+
   if (props.friends.length !== 0) {
     return (
       <div>
+        <div>
+          <Link to="/viewOtherGolfers">
+            <button>Find More Friends</button>
+          </Link>
+        </div>
         {props.friends.map((friend) => {
           return (
             <div class="container">
@@ -50,7 +59,9 @@ const GolfFriends = (props) => {
                       </div>
                     </div>
                     <div>
-                      <button>Delete Friend</button>
+                      <button onClick={() => handleClick(friend._id)}>
+                        Delete Friend
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -59,11 +70,6 @@ const GolfFriends = (props) => {
             </div>
           );
         })}
-        <div>
-          <Link to="/viewOtherGolfers">
-            <button>Find More Friends</button>
-          </Link>
-        </div>
       </div>
     );
   } else {

@@ -170,5 +170,19 @@ router.get(`/:golferId/findGolfers`, async (req,res)=>{
     }
 })
 
+//delete a friend
+
+router.delete(`/deleteFriend/:golferId/:friendId`, async (req,res)=>{
+    try{
+        const golfer= await Golfer.findById(req.params.golferId)
+        const newFriends = golfer.friends.filter((friend)=> friend._id != req.params.friendId);
+        golfer.friends = newFriends
+        await golfer.save()
+        return res.send(golfer)
+    }catch(ex){
+        return res.status(500).send(`Internal Server Error: ${ex}`)
+    }
+})
+
 
 module.exports = router;
