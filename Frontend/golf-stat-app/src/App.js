@@ -87,7 +87,7 @@ function App() {
     console.log(newGolfBag);
     axios
       .put(
-        `http://localhost:5000/api/golfBag/updateGolfBag/${player._id}/${player.golfBag._id}`,
+        `http://localhost:5000/api/golfBag/updateGolfBag/${player._id}`,
         newGolfBag
       )
       .then((res) => setPlayer(res.data));

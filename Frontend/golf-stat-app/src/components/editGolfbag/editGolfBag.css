@@ -4,9 +4,12 @@
   border-color: black;
   padding: 15px;
   background-color: wheat;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .golfBag-form input {
   background-color: white;
+  border-radius: 5px;
+  margin-left: 5px;
 }
 
 .golfBag-form label {

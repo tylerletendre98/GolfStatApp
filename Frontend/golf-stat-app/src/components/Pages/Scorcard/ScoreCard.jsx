@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./scoreCard.css";
 
 const ScoreCard = (props) => {
-  let [roundTotal, setRoundTotal] = useState(0);
+  const [roundTotal, setRoundTotal] = useState(0);
   const [holeOneScore, setHoleOneScore] = useState(0);
   const [holeTwoScore, setHoleTwoScore] = useState(0);
   const [holeThreeScore, setHoleThreeScore] = useState(0);
@@ -433,7 +433,12 @@ const ScoreCard = (props) => {
                     />
                   </td>
                   <td>
-                    <input type="number" name="" id="" />
+                    <input
+                      type="number"
+                      name=""
+                      id=""
+                      onChange={handleRoundTotal}
+                    />
                   </td>
                 </tr>
               </tbody>

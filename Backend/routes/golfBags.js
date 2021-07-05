@@ -60,26 +60,19 @@ router.delete(`/deleteGolfBag/:id`, async (req,res)=>{
     }
 });
 
-router.put(`/updateGolfBag/:golferId/:golfBagId`, async (req,res)=>{
+router.put(`/updateGolfBag/:golferId`, async (req,res)=>{
     try{
         const golfer = await Golfer.findById(req.params.golferId)
-        const golfBag = await GolfBag.findByIdAndUpdate(req.params.golfBagId,
-            {
-            driver: req.body.driver,
+            const golfBag = {
+                driver: req.body.driver,
             threeWood: req.body.threeWood,
             fiveWood: req.body.fiveWood,
             threeHybrid: req.body.threeHybrid,
             ironSet: req.body.ironSet,
             wedges: req.body.wedges,
             putter: req.body.putter
-            },
-            {new: true}
-        );
-        if(!golfBag)
-            return res.status(400).send(`The golfbag with the id "${req.params.id}"
-            does not exist.`);
+            }
 
-            await golfBag.save()
             golfer.golfBag= golfBag
             await golfer.save()
             return res.send(golfer)

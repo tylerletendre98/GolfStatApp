@@ -20,6 +20,12 @@ const EditGolfBag = (props) => {
       putter: putter,
     };
     props.editGolfBag(newGolfBag);
+    setDriver();
+    setThreeWood();
+    setThreeHybrid();
+    setIronSet();
+    setWedges();
+    setPutter();
     window.location = "/player";
   };
 
@@ -111,7 +117,12 @@ const EditGolfBag = (props) => {
                 onChange={handlePutter}
               />
               <br />
-              <input type="submit" name="" id="" />
+              <input
+                type="submit"
+                name=""
+                id=""
+                style={{ backgroundColor: "green" }}
+              />
             </form>
           </div>
         </div>
